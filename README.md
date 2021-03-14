@@ -1,5 +1,5 @@
-# Discoh
-Discoh stands for **dis**tributed **coh**erence. 
+# discoh
+discoh stands for **dis**tributed **coh**erence. 
 ## What is distributed Coherence?
 A distributed system is said to be coherent if and only if, 
   1. all components of the system
