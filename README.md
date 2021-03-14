@@ -48,14 +48,14 @@ if v is nil // on a cache miss
 
 Here is how writes happen in the client per the original FB architecture:
 ```
-update_or_insert_in_db(k,v) // update or insert the key/value pair in the db
+upsert_in_db(k,v) // update or insert the key/value pair in the db
 delete(k) // delete the key from the cache
 ```
 
 Here is the modified write in the client with discoh in the Enhanced FB architecture:
 
 ```
-update_or_insert_in_db(k,v) // update or insert the key/value pair in the db
+upsert_in_db(k,v) // update or insert the key/value pair in the db
 delete(k) // delete the key from the cache
 discoh_pull(k)
 ```
