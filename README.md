@@ -24,11 +24,12 @@ Sure. Here is the Facebook Memcached Architecture per the published paper.
 ![facebook memcached architecture](Facebook_Memcached_Architecture.png)
 Here is how reads happen:
 
-`
--v = get(k);`
--if v is nil // on a cache miss`
--v = fetch_from_db(k)
--set(k,v)  //set the cache with the key,value pair
+```
+v = get(k);
+if v is nil // on a cache miss`
+   v = fetch_from_db(k)
+set(k,v)  //set the cache with the key,value pair
+```
 `
 
 Here is how writes happen:
