@@ -38,4 +38,5 @@ update_or_insert_in_db(k,v) // update or insert the key/value pair in the db
 delete(k) // delete the key from the cache
 ```
 ![read and write flow](Memcache_read_write.png)
+For more detailed information refer to the original paper <http://www.cs.utah.edu/~stutsman/cs6963/public/papers/memcached.pdf>
 
