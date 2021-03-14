@@ -25,10 +25,10 @@ Sure. Here is the Facebook Memcached Architecture per the published paper.
 Here is how reads happen:
 
 `
-1.v = get(k);`
-2. if v is nil // on a cache miss`
-3.    v = fetch_from_db(k)
-4.  set(k,v)  //set the cache with the key,value pair
+-v = get(k);`
+-if v is nil // on a cache miss`
+-v = fetch_from_db(k)
+-set(k,v)  //set the cache with the key,value pair
 `
 
 Here is how writes happen:
