@@ -22,21 +22,43 @@ discoh uses the directory-based coherence protocol which is a proven cache coher
 ## Do you have a reference architecture?
 Sure. Here is the Facebook Memcached Architecture per the published paper.
 ![facebook memcached architecture](Facebook_Memcached_Architecture.png)
-Here is how reads happen:
+
+Here is how reads happen in the client per the FB architecture:
 
 ```
 v = get(k);
-if v is nil // on a cache miss`
+if v is nil // on a cache miss
    v = fetch_from_db(k)
-set(k,v)  // set the cache with the key,value pair
+   set(k,v)  // set the cache with the key,value pair
 ```
 
+Here is how the modified read in your client with discoh in the architecture:
 
-Here is how writes happen:
+```
+v = **discoh_read(k);**
+v' = get(k);
+if v is nil // on a cache miss
+   if v' is nil
+     v = fetch_from_db(k)
+     set(k,v)  // set the cache with the key,value pair
+   else
+      v = v'
+```
+![read and write flow](Memcache_read_write.png)
+
+Here is how writes happen in the FB architecture:
 ```
 update_or_insert_in_db(k,v) // update or insert the key/value pair in the db
 delete(k) // delete the key from the cache
 ```
-![read and write flow](Memcache_read_write.png)
+
+Here is how the modified write in your client with discoh in the architecture:
+
+```
+update_or_insert_in_db(k,v) // update or insert the key/value pair in the db
+delete(k) // delete the key from the cache
+**discoh_pull(k)**
+```
+
 For more detailed information refer to the original paper <http://www.cs.utah.edu/~stutsman/cs6963/public/papers/memcached.pdf>
 
