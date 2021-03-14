@@ -19,3 +19,6 @@ If your distriuted system goal is strong consistency without sacrificing availab
 - If you used consistent hashing to load balance your cache servers, you are in luck, as discoh uses consistent hashing as well. 
 ## How does the architecture work?
 discoh uses the directory-based coherence protocol which is a proven cache coherence mechanism in parallel processors and multicore processors have been in production with the directory based coherence mechanism since 2005.
+## Do you have a reference architecture?
+Sure. Here is the Facebook Memcached Architecture per the published paper.
+![facebook memcached architecture](Facebook_Memcached_Architecture.png)
