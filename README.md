@@ -30,7 +30,7 @@ if v is nil // on a cache miss`
    v = fetch_from_db(k)
 set(k,v)  // set the cache with the key,value pair
 ```
-`
+
 
 Here is how writes happen:
 ```
