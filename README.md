@@ -37,8 +37,8 @@ Here is the modified read in the client with discoh in the Enhanced FB architect
 ```
 v = discoh_read(k);
 v' = get(k);
-if v is nil // on a cache miss
-   if v' is nil
+if v is nil 
+   if v' is nil // on a cache miss
      v = fetch_from_db(k)
      set(k,v)  // set the cache with the key,value pair
    else
