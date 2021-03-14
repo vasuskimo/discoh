@@ -4,8 +4,8 @@ discoh stands for **dis**tributed **coh**erence.
 A distributed system is said to be coherent if and only if, 
   1. all components of the system
   2. have a consistent view of the last written value 
-  3. of each key
-  4. at any time.
+  3. of every key
+  4. at any given time.
 ## How does discoh help me?
 If your distriuted system goal is strong consistency without sacrificing availability, Discoh helps you achieve strong consistency with your existing infrastructure. Discoh can be quickly integrated with your existing infrastructure containing either memcached or Redis cache clusters.
 ## How do I get started?
