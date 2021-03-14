@@ -34,7 +34,7 @@ set(k,v)  // set the cache with the key,value pair
 
 Here is how writes happen:
 ```
-update_or_insert_in_db(k,v) // update or insert the key/value pair in the db`
+update_or_insert_in_db(k,v) // update or insert the key/value pair in the db
 delete(k) // delete the key from the cache
 ```
 ![read and write flow](Memcache_read_write.png)
