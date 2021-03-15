@@ -78,4 +78,4 @@ You need to add a config.txt before running it with the following key and value 
 - peer_ip=discoh223.acmedddd.com
 - host_port=7654
 - peer_port=7654
-5. Run from the terminal the following: discoh --config config.txt --type cache
+5. Run from the terminal the following: discoh --config config.txt --type directory
