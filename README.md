@@ -61,7 +61,7 @@ discoh_pull(k)
 For more detailed information refer to the original paper <http://www.cs.utah.edu/~stutsman/cs6963/public/papers/memcached.pdf>
 
 ## What are the configurations needed to get discoh up and running?
-You can run discooh as either a directory server (--type directory) or a cache server (--type cache)
+You can run discooh as either as a default transient cache for writes (--type default) or a cache server (--type cache)
 You need to add a config.txt before running it with the following key and value pairs.
 1. ttl=30 You could change the default cache ttl from 60 secs.
 2. You need to add connection parameters to the database. (mysql, oracle, sqlserever and postgres).
@@ -76,7 +76,7 @@ You need to add a config.txt before running it with the following key and value 
 - peer_ip=discoh223.acmedddd.com
 - host_port=7654
 - peer_port=7654
-5. Run from the terminal the following: discoh --config config.txt --type directory
+5. Run from the terminal the following: discoh --config config.txt
 
 ## Tokens
 1. In order to prevent stale content, a discoh instance gives a lease to a client to set data back into the cache when that client experiences a cache miss. 
