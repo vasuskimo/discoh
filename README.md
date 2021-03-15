@@ -17,6 +17,9 @@ If your distributed system goal is close to strong consistency without sacrifici
 - You need to configure the database connection parameters.
 3. Deploy a cluster of discoh servers, to create shards of discoh servers using consistent hashing to load balance your cache servers.
 4. Deploy one cluster in one region (e.g., East Region) and another in the second region (e.g., West Region).
+
+## What is discoh's cache coherence protocol based on?
+discoh is inspired by hardware cache coherence protocols used to solve the cache coherence problem in multiprocessors. While snooping requires a bus for rapid communication thus infeasible for larger networks and directory requires the union of all keys and their states: modified, shared, exclusive stored in one central place, which requires humongous memory. The current approach is directory inspired in that, it has a central place, which has the keys and values of all the ‘current’ writes.
 ## Do you have a reference architecture?
 Sure. Here is the Facebook Memcached Architecture per the published paper.
 ![facebook memcached architecture](Facebook_Memcached_Architecture.png)
