@@ -7,7 +7,7 @@ A distributed system is said to be coherent if and only if,
   3. of every key
   4. at any given time.
 ## How does discoh help me?
-If your distributed system goal is close to strong consistency without sacrificing availability, discoh helps you achieve strong consistency with your existing infrastructure. discoh can be quickly integrated with your existing infrastructure containing any cache cluster such as memcached or Redis or your favorite one.
+If your distributed system goal is close to strong consistency without sacrificing availability, discoh helps you achieve close to strong consistency with your existing infrastructure. discoh can be quickly integrated with your existing infrastructure containing any cache cluster such as memcached or Redis or your favorite one.
 ## How do I get started?
 1. Change your client code to include the following rpc call: v' = discoh_read(k) in parallel along with a v = get(k) to your cache server, whenever you do a read. 
 - If discoh_read returns a value, your client takes that value, otherwise the client will take the value v returned by the cache. 
