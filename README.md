@@ -16,6 +16,7 @@ If your distributed system goal is close to strong consistency without sacrifici
 - discoh_pull(k) would do a fetch the value from the DB.
 - You need to configure the database connection parameters.
 3. Deploy a cluster of discoh servers, to create shards of discoh servers using consistent hashing to load balance your cache servers.
+4. Deploy one cluster in one region (e.g., East Region) and another in the second region (e.g., West Region).
 ## How does the architecture work?
 discoh uses a protocol similar to the directory-based coherence protocol which is a proven cache coherence mechanism in parallel processors and multicore processors have been in production with the directory based coherence mechanism since 2005.
 ## Do you have a reference architecture?
