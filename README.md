@@ -7,7 +7,7 @@ A distributed system is said to be coherent if and only if,
   3. of every key
   4. at any given time.
 ## How does discoh help me?
-If your distributed system goal is close to strong consistency without sacrificing availability, discoh helps you achieve close to strong consistency with your existing infrastructure. discoh can be quickly integrated with your existing infrastructure containing any cache cluster such as memcached or Redis or your favorite one.
+If your distributed system goal is close to strong consistency without sacrificing availability, discoh helps you achieve close to strong consistency with your existing infrastructure. discoh can be quickly integrated with your existing infrastructure containing any cache cluster such as memcached or Redis or using discoh itself.
 ## How do I get started?
 1. Change your client code to include the following rpc call: v' = discoh_read(k) in parallel along with a v = get(k) to your cache server, whenever you do a read. 
 - If discoh_read returns a value, your client takes that value, otherwise the client will take the value v returned by the cache. 
@@ -62,10 +62,13 @@ discoh_pull(k)
 For more detailed information refer to the original paper <http://www.cs.utah.edu/~stutsman/cs6963/public/papers/memcached.pdf>
 
 ## What are the configurations needed to get discoh up and running?
+You can run discooh as either a directory server (--type directory) or a cache server (--type cache)
 You need to add a config.txt before running it with the following key and value pairs.
 1. ttl=30 You could change the default cache ttl from 60 secs.
-2. You need to add connection parameters to the database. (MySQL, Oracle, SQL Server and PostgreSQL).
+2. You need to add connection parameters to the database. (mysql, oracle, sqlserever and postgres).
 3. You need to add the SQL query used by clients to fetch the key and value. 
+4. Here is a sample config.txt
+- type=
 - db=customer
 - username=john
 - password=jdoe123
@@ -75,4 +78,4 @@ You need to add a config.txt before running it with the following key and value 
 - peer_ip=discoh223.acmedddd.com
 - host_port=7654
 - peer_port=7654
-4. Run from the terminal the following: disocee --config config.txt
+5. Run from the terminal the following: disocee --config config.txt --type cache
