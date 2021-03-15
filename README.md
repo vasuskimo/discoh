@@ -68,7 +68,6 @@ You need to add a config.txt before running it with the following key and value 
 2. You need to add connection parameters to the database. (mysql, oracle, sqlserever and postgres).
 3. You need to add the SQL query used by clients to fetch the key and value. 
 4. Here is a sample config.txt
-- type=
 - db=customer
 - username=john
 - password=jdoe123
