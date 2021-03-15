@@ -87,7 +87,7 @@ You need to add a config.txt before running it with the following key and value 
 4. With the lease token, discoh can verify and determine whether the data should be stored and
 thus arbitrate concurrent writes. 
 5. Verification can fail if discoh has invalidated the lease token due to receiving a delete request for that item. 
-6 A slight modification to leases also mitigates thundering herds. 
+6. A slight modification to leases also mitigates thundering herds. 
 7. Each discoh server regulates the rate at which it returns tokens defaulting to 10 seconds per key.
 8. Requests for a key’s value within 10 seconds of a token being issued results in a special notification informing the client to wait a short amount of time. 
 9. Typically, the client with the lease will have successfully set the data within a few milliseconds. Thus, when waiting clients
